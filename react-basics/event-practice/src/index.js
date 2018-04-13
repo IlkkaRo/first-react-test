@@ -9,7 +9,10 @@ class Input extends React.Component{
 
 handleChange =(event)=>{
   let inputField = event.target;
-
+  if(inputField.textLength < 0)
+  {
+    this.setState({messagefield: "Write something..."})
+  }
   if(inputField.textLength < 20)
   {
     this.setState({messagefield: event.target.value});
@@ -25,5 +28,5 @@ handleChange =(event)=>{
     );
   }
 }
-
+//goddamn github
 ReactDOM.render(<Input />, document.getElementById('root'));
